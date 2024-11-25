@@ -1,5 +1,47 @@
 [
   {
+    "ContainingType": "ComputerApi.Controllers.computerController",
+    "Method": "Post",
+    "RelativePath": "comp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createComputerDto",
+        "Type": "ComputerApi.Models.CreateComputerDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.computerController",
+    "Method": "GetAllCompByID",
+    "RelativePath": "comp/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComputerApi.Controllers.OsystemController",
     "Method": "Post",
     "RelativePath": "osystem",
@@ -70,5 +112,52 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.OsystemController",
+    "Method": "Put",
+    "RelativePath": "osystem/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateOsDto",
+        "Type": "ComputerApi.Models.UpdateOsDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApi.Models.Osystem",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.OsystemController",
+    "Method": "Delete",
+    "RelativePath": "osystem/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
