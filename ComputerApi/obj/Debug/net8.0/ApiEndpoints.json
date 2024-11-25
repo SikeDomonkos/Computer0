@@ -42,6 +42,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComputerApi.Controllers.computerController",
+    "Method": "Delete",
+    "RelativePath": "comp/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerApi.Controllers.computerController",
+    "Method": "GetNumberOfComp",
+    "RelativePath": "comp/numOfComps/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ComputerApi.Controllers.OsystemController",
     "Method": "Post",
     "RelativePath": "osystem",

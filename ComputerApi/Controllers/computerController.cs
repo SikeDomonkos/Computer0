@@ -62,6 +62,19 @@ namespace ComputerApi.Controllers
             }
             return BadRequest(new { message = "Nincs ilyen találat" });
         }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var os = await computerContext.Comps.FirstOrDefaultAsync(os => os.Id == id);
+
+            if (os != null)
+            {
+                computerContext.Comps.Remove(os);
+                await computerContext.SaveChangesAsync();
+                return Ok();
+            }
+            return NotFound(new { message = "Nincs ilyen találat" });
+        }
 
     }
 
