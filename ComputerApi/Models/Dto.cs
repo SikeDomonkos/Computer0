@@ -5,4 +5,6 @@
     public record UpdateOsDto(string? Name);
 
     public record CreateComputerDto(Guid? id,string brand,string type,double display,int memory,DateTime CreatedTime,Guid Osld);
+
+    public record UpdateComputerDto(Guid? id, string brand, string type, double display, int memory, DateTime CreatedTime, Guid Osld);
 }

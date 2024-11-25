@@ -5,6 +5,8 @@ namespace ComputerApi.Models;
 
 public partial class Osystem
 {
+    internal string type;
+
     public Guid Id { get; set; }
 
     public string Name { get; set; } = null!;
