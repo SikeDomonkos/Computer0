@@ -50,7 +50,19 @@ namespace ComputerApi.Controllers
             return BadRequest();
         }
 
-        
+
+        [HttpGet("numOfComps/{id}")]
+        public async Task<ActionResult> GetNumberOfComp(Guid id)
+        {
+            var numOfComps = computerContext.Comps.Where(c => c.Osld == id).Count();
+
+            if (numOfComps != null)
+            {
+                return Ok(new { message = $"A(z) megadott os-hez {numOfComps} számítógép tartozik." });
+            }
+            return BadRequest(new { message = "Nincs ilyen találat" });
+        }
+
     }
 
 }
