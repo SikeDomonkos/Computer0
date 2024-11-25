@@ -54,5 +54,32 @@ namespace ComputerApi.Controllers
 
             return NotFound(new { Message = "Nincs ilyen találat"});
         }
+
+        [HttpPut("{id}")]
+        public async Task<ActionResult<Osystem>> Put(Guid id, UpdateOsDto updateOsDto)
+        {
+            var existingOs = await computerContext.Osystems.FirstOrDefaultAsync(eos => eos.Id ==id);
+            if (existingOs !=null)
+            {
+                existingOs.Name = updateOsDto.Name;
+                computerContext.Osystems.Update(existingOs);
+                await computerContext.SaveChangesAsync();
+                return Ok(existingOs);
+            }
+            return NotFound(new { message = "Nincs ilyen találat"});
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+             var os =  await computerContext.Osystems.FirstOrDefaultAsync(os => os.Id == id);
+
+            if(os != null)
+            {
+                computerContext.Osystems.Remove(os);
+                await computerContext.SaveChangesAsync();
+                return Ok();
+            }
+            return NotFound(new { message = "Nincs ilyen találat" });
+        }
     }
 }
